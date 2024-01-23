@@ -38,7 +38,7 @@ ul {
 	margin: 0 !important;
 }
 :where(.css-i1mju1).ant-row {
-	flex-flow: none;
+	flex-flow: initial;
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-card .ant-card-body {
