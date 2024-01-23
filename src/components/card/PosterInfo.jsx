@@ -17,7 +17,7 @@ const PosterInfo = ({ movies }) => (
         style={{ display: 'flex' }}
       >
         {movie.poster_path === null
-          ? <img className="movie-null movie-poster" alt="" />
+          ? <img className="movie-null movie-poster card__row" alt="" />
           : <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt="" /> }
         <Flex
           className="card__wrapper"
