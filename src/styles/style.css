@@ -209,3 +209,11 @@ img {
   bottom: 0;
   left: 0;
 }
+
+:where(.css-i1mju1).ant-empty {
+	margin-inline: inherit;
+}
+
+:where(.css-i1mju1).ant-row {
+	height: 100%;
+}
