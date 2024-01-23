@@ -7,7 +7,7 @@ import Header from './header/Header.jsx';
 import fetchMovies from './data/Data.jsx';
 import Footer from './footer/Footer.jsx';
 import DisplayComponent from './card/display/OutDisplay.jsx';
-import ErrorBlock from './card/Alert.jsx';
+import { NoInternetConnection } from './card/Alert.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +44,7 @@ class App extends Component {
     this.setState({ isLoading: true, outOfSearch: false });
     fetchMovies({ inputValue: this.state.inputValue, page })
       .then((movies) => {
+        console.log('Запрос выполнен');
         this.setState({
           movies,
           isLoading: false,
@@ -100,7 +101,7 @@ class App extends Component {
             <Footer onPageChange={this.handlePageChange} />
           </>
         ) : (
-          <ErrorBlock isOnline={isOnline} />
+          <NoInternetConnection isOnline={isOnline} />
         )}
       </section>
     );

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {
   Flex, Rate, Typography, Row, Col, Card,
 } from 'antd';
-import Image from './Img.jsx';
+import Image from './img/Img.jsx';
 import Overview from './Overview.jsx';
 import MovieGenres from './FindGenre.jsx';
 
@@ -18,7 +18,7 @@ class Cards extends Component {
       const date = new Date();
       return date.toLocaleDateString('en-US', options);
     }
-    console.log(movies);
+    // console.log(movies);
     return (
       <section className="flex stable-font">
         {movies.map((movie) => (

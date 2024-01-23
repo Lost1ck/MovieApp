@@ -8,6 +8,7 @@ const Roulling = () => (
       <LoadingOutlined
         style={{
           fontSize: 36,
+          margin: '20 0',
         }}
         spin
       />
