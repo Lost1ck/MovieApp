@@ -2,6 +2,9 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+}
+
+p {
 	font-size: 12px;
 }
 
@@ -80,6 +83,7 @@ ul {
 :where(.css-dev-only-do-not-override-i1mju1).ant-rate {
 	position: absolute;
 	bottom: 20px;
+	font-size: 14px;
 	left: 20px;
 }
 :where(.css-i1mju1).ant-rate {
