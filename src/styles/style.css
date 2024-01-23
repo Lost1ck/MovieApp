@@ -37,61 +37,6 @@ ul {
 	background-color: white;
 }
 
-:where(.css-dev-only-do-not-override-i1mju1).ant-row {
-	margin: 0 !important;
-}
-:where(.css-i1mju1).ant-row {
-	flex-flow: initial;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-card .ant-card-body {
-	padding: 0;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-empty {
-	display: flex;
-	height: 260px;
-	width: 180px;
-	margin: 0 !important;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
-	padding: 0 !important;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-flex {
-	justify-content: space-between;
-	align-items: center;
-}
-
-:where(.css-i1mju1).ant-col-12 {
-	flex: none;
-	align-items: center;
-	padding: 0 !important;
-}
-
-:where(.css-i1mju1).ant-flex {
-	display: flex;
-	justify-content: space-between;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-col-12 {
-	flex: none;
-	padding: 0 !important;
-	max-width: 53%;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-rate {
-	position: absolute;
-	bottom: 20px;
-	font-size: 14px;
-	left: 20px;
-}
-:where(.css-i1mju1).ant-rate {
-	display: flex;
-	justify-content: center;
-}
-
 .card {
 	border: 0;
 	border-radius: 0;
@@ -101,12 +46,6 @@ ul {
 	height: 281px;
 }
 
-/* .card__row {
-	width: 454px;
-	height: 281px;
-	overflow: hidden;
-} */
-
 .card__image {
 	width: '173px',
 }
@@ -114,9 +53,7 @@ ul {
 .card__box {
 	height: 260px;
 	width: 260px;
-	padding: 0 !important;
-	margin: 10px 0;
-	margin: 10px 0 10px 10px;
+	margin-top: 10px;
 }
 
 .card__rate {
@@ -221,33 +158,26 @@ img {
 	border-color: none !important;
 }
 
-.btn-pick:hover, .btn-pick:focus {
-  background-color: none;
-  border-color: none;
-  color: #1890FF;
+:where(.css-dev-only-do-not-override-i1mju1).ant-card .ant-card-body {
+	padding: 0;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-col-12 {
+	flex: none;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-flex {
+	align-items: center;
+	justify-content: space-between;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-rate {
 	font-size: 14px;
 }
 
-:where(.css-dev-only-do-not-override-i1mju1).ant-pagination {
-	margin-top: 20px;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-pagination .ant-pagination-item-active a {
-	color: white;
-	background-color: #1677ff;
-	border-radius: 3px;
-}
-
-:where(.css-i1mju1).ant-card .ant-card-body {
-	padding: 0px;
-}
-
-:where(.css-dev-only-do-not-override-i1mju1).ant-empty {
-	display: flex;
-	height: 281px;
-	width: 183px;
-	margin: 0;
-	justify-content: center;
-	flex-direction: none;
-	align-items: center;
+:where(.css-dev-only-do-not-override-i1mju1).ant-rate {
+	font-size: 16px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
