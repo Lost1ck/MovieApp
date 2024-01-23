@@ -212,8 +212,16 @@ img {
 
 :where(.css-i1mju1).ant-empty {
 	margin-inline: inherit;
+	height: 100%;
+	display: flex;
+  align-items: center;
 }
 
 :where(.css-i1mju1).ant-row {
+	height: 100%;
+}
+
+:where(.css-i1mju1).ant-card .ant-card-body {
+	padding: 0;
 	height: 100%;
 }
