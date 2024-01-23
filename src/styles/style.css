@@ -202,3 +202,10 @@ img {
 :where(.css-i1mju1).ant-flex {
 	justify-content: space-between;
 }
+
+:where(.css-i1mju1).ant-rate {
+	font-size: 16px;
+	position: absolute;
+  bottom: 0;
+  left: 0;
+}
