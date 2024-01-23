@@ -116,6 +116,7 @@ ul {
 	width: 260px;
 	padding: 0 !important;
 	margin: 10px 0;
+	margin: 10px 0 10px 10px;
 }
 
 .card__rate {
