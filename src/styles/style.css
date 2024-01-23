@@ -35,12 +35,6 @@ ul {
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-row {
-	display: flex !important;
-	flex-flow: row wrap !important;
-	min-width: 0 !important;
-	flex-direction: column !important;
-	align-content: stretch !important;
-	align-items: flex-start !important;
 	margin: 0 !important;
 }
 
@@ -90,13 +84,15 @@ ul {
 	border-radius: 0;
 	box-shadow: 0 4px 12px 0 #00000026;
 	margin-top: 20px;
+	width: 454px;
+	height: 281px;
 }
 
-.card__row {
+/* .card__row {
 	width: 454px;
 	height: 281px;
 	overflow: hidden;
-}
+} */
 
 .card__image {
 	width: '173px',
@@ -106,7 +102,7 @@ ul {
 	height: 260px;
 	width: 260px;
 	padding: 0;
-	margin-top: 10px;
+	margin: 10px;
 }
 
 .card__rate {
