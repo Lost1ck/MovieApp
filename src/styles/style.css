@@ -35,7 +35,11 @@ ul {
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-row {
-	margin: 0 !important;
+	:where(.css-i1mju1).ant-row {
+    display: flex;
+    flex-flow: nowrap;
+    min-width: 0;
+}
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-card .ant-card-body {
