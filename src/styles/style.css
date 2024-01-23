@@ -49,10 +49,11 @@ ul {
 	display: flex;
 	height: 260px;
 	width: 180px;
-	margin: 0;
+	margin: 0 !important;
 	justify-content: center;
 	flex-direction: column;
 	align-items: center;
+	padding: 0 !important;
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-flex {
