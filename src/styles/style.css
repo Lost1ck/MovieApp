@@ -67,6 +67,7 @@ ul {
 :where(.css-i1mju1).ant-col-12 {
 	flex: none;
 	align-items: center;
+	padding: 0 !important;
 }
 
 :where(.css-i1mju1).ant-flex {
