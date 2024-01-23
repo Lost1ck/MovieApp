@@ -113,7 +113,7 @@ ul {
 .card__box {
 	height: 260px;
 	width: 260px;
-	padding: 0;
+	padding: 0 !important;
   margin: 10px;
 }
 
