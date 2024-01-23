@@ -15,7 +15,7 @@ class ErrorBlock extends Component {
       >
         {isOnline ? (
           <Alert
-            message={`'${inputValue}' не найден `}
+            message={`'${inputValue} 'не найден`}
             description="Error Description Error Description Error Description Error Description Error Description Error Description"
             type="error"
             closable
