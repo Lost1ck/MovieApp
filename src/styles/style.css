@@ -50,6 +50,11 @@ ul {
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-empty {
 	display: flex;
+	height: 260px;
+	width: 180px;
+	margin: 0;
+	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 }
 
@@ -74,15 +79,6 @@ ul {
 	max-width: 53%;
 }
 
-:where(.css-dev-only-do-not-override-i1mju1).ant-empty {
-	display: flex;
-	height: 260px;
-	width: 180px;
-	margin: 0;
-	justify-content: center;
-	flex-direction: column;
-}
-
 :where(.css-dev-only-do-not-override-i1mju1).ant-rate {
 	position: absolute;
 	bottom: 20px;
@@ -98,7 +94,9 @@ ul {
 }
 
 .card__row {
-	height: 260px;
+	width: 454px;
+	height: 281px;
+	overflow: hidden;
 }
 
 .card__image {
@@ -131,10 +129,10 @@ ul {
 }
 
 .card__genre {
-	padding: 2px 5px;
 	border-radius: 2px;
 	border: 1px solid #D9D9D9;
 	background: #FAFAFA;
+	padding: 1px 2px;
 }
 
 .card__color-text {
@@ -205,8 +203,8 @@ ul {
 }
 
 img {
-	height: 260px;
-	width: 180px;
+	width: 183px;
+	height: 281px;
 }
 
 .btn {
@@ -221,7 +219,6 @@ img {
 	font-size: 14px;
 }
 
-
 :where(.css-dev-only-do-not-override-i1mju1).ant-pagination {
 	margin-top: 20px;
 }
@@ -234,4 +231,14 @@ img {
 
 :where(.css-i1mju1).ant-card .ant-card-body {
 	padding: 0px;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-empty {
+	display: flex;
+	height: 281px;
+	width: 183px;
+	margin: 0;
+	justify-content: center;
+	flex-direction: none;
+	align-items: center;
 }
