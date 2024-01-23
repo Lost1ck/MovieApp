@@ -55,6 +55,7 @@ ul {
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-flex {
 	justify-content: space-between;
+	align-items: center;
 }
 
 :where(.css-i1mju1).ant-col-12 {
@@ -106,6 +107,8 @@ ul {
 .card__box {
 	height: 260px;
 	width: 260px;
+	padding: 0;
+	margin-top: 10px;
 }
 
 .card__rate {
