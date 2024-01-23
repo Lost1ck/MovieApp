@@ -63,7 +63,7 @@ ul {
 
 :where(.css-i1mju1).ant-col-12 {
 	flex: none;
-	/* max-width: none; */
+	align-items: center;
 }
 
 :where(.css-i1mju1).ant-flex {
@@ -81,6 +81,10 @@ ul {
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
+}
+:where(.css-i1mju1).ant-rate {
+	display: flex;
+	justify-content: center;
 }
 
 .card {
