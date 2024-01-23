@@ -35,12 +35,12 @@ ul {
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-row {
-	display: flex;
-	flex-flow: row wrap;
-	min-width: 0;
-	flex-direction: column;
-	align-content: stretch;
-	align-items: flex-start;
+	display: flex !important;
+	flex-flow: row wrap !important;
+	min-width: 0 !important;
+	flex-direction: column !important;
+	align-content: stretch !important;
+	align-items: flex-start !important;
 	margin: 0 !important;
 }
 
