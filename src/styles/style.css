@@ -54,6 +54,7 @@ ul {
 	height: 260px;
 	width: 260px;
 	margin-top: 10px;
+	padding: 0 !important;
 }
 
 .card__rate {
@@ -180,4 +181,12 @@ img {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-empty {
+	margin-inline: inherit;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-empty .ant-empty-image {
+	height: 281px;
 }
