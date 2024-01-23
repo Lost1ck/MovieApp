@@ -190,3 +190,15 @@ img {
 :where(.css-dev-only-do-not-override-i1mju1).ant-empty .ant-empty-image {
 	height: 281px;
 }
+:where(.css-i1mju1).ant-card .ant-card-body {
+	padding: 0;
+	border-radius: 0 0 8px 8px;
+}
+
+:where(.css-i1mju1).ant-col-12 {
+	flex: inherit;
+}
+
+:where(.css-i1mju1).ant-flex {
+	justify-content: space-between;
+}
