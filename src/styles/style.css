@@ -35,11 +35,10 @@ ul {
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-row {
-	:where(.css-i1mju1).ant-row {
-    display: flex;
-    flex-flow: nowrap;
-    min-width: 0;
+	margin: 0 !important;
 }
+:where(.css-i1mju1).ant-row {
+	flex-flow: none;
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-card .ant-card-body {
@@ -106,7 +105,7 @@ ul {
 	height: 260px;
 	width: 260px;
 	padding: 0;
-	margin: 10px;
+  margin: 10px;
 }
 
 .card__rate {
