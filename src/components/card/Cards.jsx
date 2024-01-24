@@ -13,15 +13,14 @@ class Cards extends Component {
     function getRatingClassName(voteAverage) {
       return voteAverage.toFixed(1) > 7 ? 'high' : 'low';
     }
-    function formatDate() {
+    function formatDate(releaseDate) {
+      if (!releaseDate) return '';
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
-      const date = new Date();
-      return date.toLocaleDateString('en-US', options);
+      return new Date(releaseDate).toLocaleDateString('en-US', options);
     }
-    // console.log(movies);
     return (
       <section className="flex stable-font">
-        {movies.map((movie) => (
+        {Array.isArray(movies) && movies.map((movie) => (
           <Card
             className="card"
             key={movie.id}

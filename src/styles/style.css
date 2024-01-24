@@ -225,3 +225,22 @@ img {
 	padding: 0;
 	height: 100%;
 }
+
+.ant-pagination-options {
+	display: none;
+}
+:where(.css-dev-only-do-not-override-i1mju1).ant-select-single .ant-select-selector {
+	display: none;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-pagination::after {
+	display: none;
+}
+
+:where(.css-dev-only-do-not-override-i1mju1).ant-select .ant-select-arrow {
+	display: none;
+}
+
+.ant-pagination .css-dev-only-do-not-override-i1mju1 {
+	margin-top: 10px;
+}

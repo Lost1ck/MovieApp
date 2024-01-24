@@ -4,7 +4,7 @@
 import React from 'react';
 import { Button, Divider, Input } from 'antd';
 
-const Header = ({ inputValue, handleInputChange, handleInputKeyDown }) => {
+const Header = ({ inputValue, handleInputChange }) => {
   return (
     <header>
       <div>
@@ -19,7 +19,6 @@ const Header = ({ inputValue, handleInputChange, handleInputKeyDown }) => {
           onChange={(e) => {
             handleInputChange(e.target.value);
           }}
-          onKeyDown={handleInputKeyDown}
         />
       </div>
     </header>

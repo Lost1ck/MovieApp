@@ -2,14 +2,14 @@
 import React from 'react';
 import { Pagination } from 'antd';
 
-const Footer = ({ onPageChange, totalPages }) => {
+const Footer = ({ currentPage, totalPages, onPageChange }) => {
   const handlePageChange = (page) => {
     onPageChange(page);
   };
 
   return (
     <Pagination
-      defaultCurrent={1}
+      defaultCurrent={currentPage}
       total={totalPages}
       onChange={handlePageChange}
     />

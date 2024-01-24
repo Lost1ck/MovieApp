@@ -10,12 +10,15 @@ async function fetchMovies({ inputValue, page }) {
   };
 
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${inputValue}&page=${page}&include_adult=true`, options);
+    const response = await fetch(`https://api.themoviedb.org/3/search/movie?&language=en-US&query=${inputValue}&page=${page}`, options);
     if (!response.ok) {
       throw new Error('Ошибка запроса');
     }
     const data = await response.json();
-    return data.results;
+    return {
+      movies: data.results,
+      totalPages: data.total_pages,
+    };
   } catch (error) {
     throw console.error(error);
   }

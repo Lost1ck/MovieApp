@@ -1,8 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
+import debounce from 'lodash/debounce';
 import Header from './header/Header.jsx';
 import fetchMovies from './data/Data.jsx';
 import Footer from './footer/Footer.jsx';
@@ -14,6 +16,7 @@ class App extends Component {
     super(props);
     this.state = {
       currentPage: 1,
+      totalPages: 0,
       inputValue: 'return',
       movies: [],
       error: null,
@@ -23,6 +26,7 @@ class App extends Component {
       outOfSearch: false,
       isOnline: navigator.onLine,
     };
+    this.debouncedFetchData = debounce(this.fetchData, 500);
   }
 
   componentDidMount() {
@@ -43,10 +47,12 @@ class App extends Component {
     }
     this.setState({ isLoading: true, outOfSearch: false });
     fetchMovies({ inputValue: this.state.inputValue, page })
-      .then((movies) => {
-        console.log('Запрос выполнен');
+      .then((data) => {
+        console.log(data.movies);
         this.setState({
-          movies,
+          movies: data.movies,
+          currentPage: page,
+          totalPages: data.totalPages,
           isLoading: false,
         });
       })
@@ -61,13 +67,9 @@ class App extends Component {
   };
 
   handleInputChange = (inputValue) => {
-    this.setState({ inputValue });
-  };
-
-  handleInputKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      this.fetchData();
-    }
+    this.setState({ inputValue }, () => {
+      this.debouncedFetchData();
+    });
   };
 
   handlePageChange = (page) => {
@@ -80,8 +82,9 @@ class App extends Component {
 
   render() {
     const {
-      inputValue, movies, error, isLoading, outOfSearch, isOnline,
+      inputValue, movies, error, isLoading, outOfSearch, isOnline, totalPages, currentPage,
     } = this.state;
+
     return (
       <section className="app-container">
         {isOnline ? (
@@ -89,7 +92,6 @@ class App extends Component {
             <Header
               inputValue={inputValue}
               handleInputChange={this.handleInputChange}
-              handleInputKeyDown={this.handleInputKeyDown}
             />
             <DisplayComponent
               isLoading={isLoading}
@@ -98,7 +100,11 @@ class App extends Component {
               movies={movies}
               inputValue={inputValue}
             />
-            <Footer onPageChange={this.handlePageChange} />
+            <Footer
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={this.handlePageChange}
+            />
           </>
         ) : (
           <NoInternetConnection isOnline={isOnline} />
