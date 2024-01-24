@@ -234,6 +234,7 @@ img {
 }
 
 :where(.css-dev-only-do-not-override-i1mju1).ant-pagination::after {
+	margin-top: 10px;
 	display: none;
 }
 
@@ -243,4 +244,8 @@ img {
 
 .ant-pagination .css-dev-only-do-not-override-i1mju1 {
 	margin-top: 10px;
+}
+
+:where(.css-i1mju1).ant-pagination .ant-pagination-options {
+	display: none;
 }
