@@ -1,7 +1,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable arrow-body-style */
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Divider, Input } from 'antd';
 
 const Header = ({ inputValue, handleInputChange }) => {
@@ -23,6 +23,11 @@ const Header = ({ inputValue, handleInputChange }) => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  inputValue: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
 };
 
 export default Header;

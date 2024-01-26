@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
 import React from 'react';
@@ -34,4 +33,17 @@ const PosterInfo = ({ movies }) => (
     ))}
   </>
 );
+
+PosterInfo.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      poster_path: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      runtime: PropTypes.number,
+      overview: PropTypes.string,
+    }),
+  ).isRequired,
+};
+
 export default PosterInfo;

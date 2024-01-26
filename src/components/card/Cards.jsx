@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import {
   Flex, Rate, Typography, Row, Col, Card,
 } from 'antd';
@@ -70,5 +71,17 @@ class Cards extends Component {
     );
   }
 }
+
+Cards.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      original_title: PropTypes.string.isRequired,
+      vote_average: PropTypes.number.isRequired,
+      release_date: PropTypes.string,
+      genre_ids: PropTypes.arrayOf(PropTypes.number),
+    }),
+  ).isRequired,
+};
 
 export default Cards;

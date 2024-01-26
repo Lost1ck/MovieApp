@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Alert, Space } from 'antd';
 
 function NotFound({ inputValue }) {
@@ -19,6 +19,10 @@ function NotFound({ inputValue }) {
     </Space>
   );
 }
+
+NotFound.propTypes = {
+  inputValue: PropTypes.string.isRequired,
+};
 
 function NoInternetConnection() {
   return (

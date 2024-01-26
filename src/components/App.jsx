@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unused-state */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
@@ -113,5 +112,16 @@ class App extends Component {
     );
   }
 }
+
+App.defaultProps = {
+  inputValue: 'return',
+  movies: [],
+  error: null,
+  isLoading: true,
+  outOfSearch: false,
+  isOnline: navigator.onLine,
+  totalPages: 0,
+  currentPage: 1,
+};
 
 export default App;

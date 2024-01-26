@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-shadow */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Card, Space } from 'antd';
 
 const genresData = {
@@ -33,7 +33,6 @@ const MovieGenres = ({ movieGen }) => {
     const genre = genresData.genres.find((genre) => genre.id === id);
     return genre ? genre.name : '';
   });
-
   const genreNames = getGenreNames();
 
   return (
@@ -43,6 +42,10 @@ const MovieGenres = ({ movieGen }) => {
       ))}
     </Space>
   );
+};
+
+MovieGenres.propTypes = {
+  movieGen: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default MovieGenres;
