@@ -1,6 +1,6 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import {
   Flex, Rate, Typography, Row, Col, Card,
 } from 'antd';
@@ -10,18 +10,27 @@ import MovieGenres from './FindGenre.jsx';
 
 class Cards extends Component {
   render() {
-    const { movies } = this.props;
+    const {
+      movies, handleRatingChange, checkedRating, getRatingForMovie,
+    } = this.props;
+
     function getRatingClassName(voteAverage) {
       return voteAverage.toFixed(1) > 7 ? 'high' : 'low';
     }
+
     function formatDate(releaseDate) {
       if (!releaseDate) return '';
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(releaseDate).toLocaleDateString('en-US', options);
     }
+    // console.log(ratedMoviesWithRating);
+    const moviesToDisplay = checkedRating
+      ? movies
+      : movies.filter((movie) => getRatingForMovie(movie.id) > 0);
+
     return (
       <section className="flex stable-font">
-        {Array.isArray(movies) && movies.map((movie) => (
+        {moviesToDisplay.map((movie) => (
           <Card
             className="card"
             key={movie.id}
@@ -29,7 +38,6 @@ class Cards extends Component {
             <Row
               gutter={24}
               className="card__row"
-              key={movie.id}
             >
               <Col span={12}>
                 <Image
@@ -62,7 +70,13 @@ class Cards extends Component {
                   <MovieGenres movieGen={movie.genre_ids} />
                 </div>
                 <Overview movie={movie} />
-                <Rate className="card__stars" allowHalf defaultValue={0.5} count={10} />
+                <Rate
+                  className="card__stars"
+                  allowHalf
+                  defaultValue={getRatingForMovie(movie.id)}
+                  count={10}
+                  onChange={(newRating) => handleRatingChange(movie.id, newRating)}
+                />
               </Col>
             </Row>
           </Card>
@@ -71,17 +85,5 @@ class Cards extends Component {
     );
   }
 }
-
-Cards.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      original_title: PropTypes.string.isRequired,
-      vote_average: PropTypes.number.isRequired,
-      release_date: PropTypes.string,
-      genre_ids: PropTypes.arrayOf(PropTypes.number),
-    }),
-  ).isRequired,
-};
 
 export default Cards;
