@@ -3,7 +3,7 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Divider, Input, Button } from 'antd';
 import {
   BrowserRouter as Router, Routes, Route, Link,
@@ -44,9 +44,9 @@ const Header = ({ inputValue, handleInputChange, setCheckedRating }) => {
   );
 };
 
-Header.propTypes = {
-  inputValue: PropTypes.string.isRequired,
-  handleInputChange: PropTypes.func.isRequired,
-};
+// Header.propTypes = {
+//   inputValue: PropTypes.string.isRequired,
+//   handleInputChange: PropTypes.func.isRequired,
+// };
 
 export default Header;

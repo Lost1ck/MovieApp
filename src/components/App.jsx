@@ -5,7 +5,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import debounce from 'lodash/debounce';
-import fetchMovies from './data/Data.jsx';
+import fetchMovies, { guestSession, askForPermissions } from './data/Data.jsx';
 import { NoInternetConnection } from './card/Alert.jsx';
 import SearchTab from './header/Tabs.jsx';
 
@@ -34,6 +34,8 @@ class App extends Component {
     const ratedMovies = JSON.parse(localStorage.getItem('ratedMovies')) || [];
     this.setState({ ratedMovies });
     this.fetchData();
+    guestSession();
+    askForPermissions();
   }
 
   componentWillUnmount() {
@@ -85,32 +87,26 @@ class App extends Component {
     this.setState({ checkedRating: checked });
   };
 
-  handleRatingChange = (movieId, newRating) => {
-    // Получите сохраненные фильмы из localStorage
-    const { ratedMovies } = this.state;
+  handleRatingChange = (movie, newRating) => {
+    const ratedMovies = JSON.parse(localStorage.getItem('ratedMovies')) || [];
 
-    // Создайте новый массив на основе текущего состояния ratedMovies
-    const updatedRatedMovies = Array.isArray(ratedMovies)
-      ? [...ratedMovies] // Создаем копию текущего массива
-      : [];
+    // Находим фильм в массиве
+    const index = ratedMovies.findIndex((item) => item.id === movie.id);
 
-    // Поиск фильма по его идентификатору в сохраненных данных
-    const existingMovie = updatedRatedMovies.find((movie) => movie.id === movieId);
-
-    // Если фильм уже существует в сохраненных данных, обновите его рейтинг
-    if (existingMovie) {
-      existingMovie.rating = newRating;
+    if (index !== -1) {
+      // Обновляем рейтинг существующего фильма
+      ratedMovies[index].rating = newRating;
     } else {
-      // Если фильма нет в сохраненных данных, добавьте его
-      updatedRatedMovies.push({ id: movieId, rating: newRating });
+      // Добавляем новый фильм с рейтингом
+      const ratedMovie = { ...movie, rating: newRating };
+      ratedMovies.push(ratedMovie);
     }
 
-    // Сохраните обновленные данные обратно в localStorage
-    localStorage.setItem('ratedMovies', JSON.stringify(updatedRatedMovies));
+    // Сохраняем обновленный список в localStorage
+    localStorage.setItem('ratedMovies', JSON.stringify(ratedMovies));
 
-    // Обновите состояние ratedMovies в компоненте
-    this.setState({ ratedMovies: updatedRatedMovies });
-    console.log(ratedMovies);
+    // Обновляем состояние
+    this.setState({ ratedMovies });
   };
 
   getRatingForMovie = (movieId) => {

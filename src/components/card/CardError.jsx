@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable arrow-body-style */
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const NoMovies = ({ error }) => {
   return (
@@ -13,8 +14,8 @@ const NoMovies = ({ error }) => {
   );
 };
 
-NoMovies.propTypes = {
-  error: PropTypes.string.isRequired,
-};
+// NoMovies.propTypes = {
+//   error: PropTypes.string.isRequired,
+// };
 
 export default NoMovies;

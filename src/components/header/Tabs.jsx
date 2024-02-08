@@ -13,7 +13,7 @@ export default class SearchTab extends Component {
   render() {
     const { searchData } = this.props;
     if (!searchData) {
-      return 'NOT A SearchTab!!!';
+      return null;
     }
     const {
       checkedRating,

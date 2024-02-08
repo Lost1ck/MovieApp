@@ -2,22 +2,23 @@
 /* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import Cards from '../Cards.jsx';
-import { NotFound } from '../Alert.jsx';
+// import { NotFound } from '../Alert.jsx';
 import Roulling from '../Spin.jsx';
 
 class DisplayComponent extends Component {
   render() {
     const {
-      isLoading, outOfSearch,
-      error, movies, inputValue, checkedRating, handleRatingChange,
+      isLoading,
+      error, movies, checkedRating, handleRatingChange,
       ratedMovies, getRatingForMovie,
     } = this.props;
 
     if (isLoading) {
       return <Roulling />;
-    } if (outOfSearch || !movies || movies.length === 0) {
-      return <NotFound inputValue={inputValue} />;
     }
+    // } if (outOfSearch || !movies || movies.length === 0) {
+    //   return <NotFound inputValue={inputValue} />;
+    // }
     return (
       <Cards
         error={error}

@@ -11,7 +11,7 @@ import MovieGenres from './FindGenre.jsx';
 class Cards extends Component {
   render() {
     const {
-      movies, handleRatingChange, checkedRating, getRatingForMovie,
+      movies, handleRatingChange, checkedRating, getRatingForMovie, ratedMovies,
     } = this.props;
 
     function getRatingClassName(voteAverage) {
@@ -23,10 +23,9 @@ class Cards extends Component {
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(releaseDate).toLocaleDateString('en-US', options);
     }
-    // console.log(ratedMoviesWithRating);
     const moviesToDisplay = checkedRating
       ? movies
-      : movies.filter((movie) => getRatingForMovie(movie.id) > 0);
+      : ratedMovies.filter((movie) => getRatingForMovie(movie.id) > 0);
 
     return (
       <section className="flex stable-font">
@@ -75,7 +74,7 @@ class Cards extends Component {
                   allowHalf
                   defaultValue={getRatingForMovie(movie.id)}
                   count={10}
-                  onChange={(newRating) => handleRatingChange(movie.id, newRating)}
+                  onChange={(newRating) => handleRatingChange(movie, newRating)}
                 />
               </Col>
             </Row>
